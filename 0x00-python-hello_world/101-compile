@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Get the Python file name from the environment variable
+PYFILE="$PYFILE"
+
+# Check if PYFILE is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: Environment variable PYFILE is not set."
+    exit 1
+fi
+
+# Check if the Python file exists
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: Python file '$PYFILE' does not exist."
+    exit 1
+fi
+
+# Extract the file name and extension
+FILENAME=$(basename "$PYFILE")
+EXTENSION="${FILENAME##*.}"
+FILENAME="${FILENAME%.*}"
+
+# Compile the Python file
+python3 -m py_compile "$PYFILE"
+
+# Check if the compilation was successful
+if [ $? -eq 0 ]; then
+    echo "Compiling main.py ..."
+	BASENAME=$(basename "$PYFILE" ".py")
+	# Get the Python version
+	PYVERSION=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+	# Rename the compiled file to match the output filename convention ($PYFILE.pyc)
+	mv "__pycache__/${BASENAME}.cpython-${PYVERSION//.}.pyc" "${BASENAME}.pyc"
+    # Clean up __pycache__
+    rm -rf "__pycache__"
+else
+    echo "Error: Compilation failed."
+    exit 1
+fi
