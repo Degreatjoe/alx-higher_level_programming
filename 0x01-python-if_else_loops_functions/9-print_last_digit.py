@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def print_last_digit(number):
     # Obtain the last digit of the number by using the modulo operator
     last_digit = abs(number) % 10
