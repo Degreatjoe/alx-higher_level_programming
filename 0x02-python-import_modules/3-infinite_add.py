@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-if __name__ == '__main__':
 
-    import sys
-
-
-    def main():
-        args = sys.argv[1:]
-
-        result = sum(int(arg) for arg in args)
-
-        print(result)
+import sys
 
 
-    if __name__ == "__main__":
-        main()
+def main():
+    args = sys.argv[1:]
+
+    result = sum(int(arg) for arg in args)
+
+    print(result)
+
+
+if __name__ == "__main__":
+    main()
