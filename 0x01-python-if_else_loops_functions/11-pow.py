@@ -8,4 +8,6 @@ def pow(a, b):
         result = 1
         for _ in range(abs(b)):
             result *= (1/a)
-    return result
+    return round(result, 2)
+
+print(pow(-98, -10))
