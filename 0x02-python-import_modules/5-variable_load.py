@@ -1,12 +1,5 @@
 #!/usr/bin/python3
 import variable_load_5
 
-
-def main():
-    # Access the variable 'a' from the imported module and print its value
-    print(variable_load_5.a)
-
-
 if __name__ == "__main__":
-    main()
-    
+    print("Value of variable 'a' from variable_load_5.py:", variable_load_5.a)
