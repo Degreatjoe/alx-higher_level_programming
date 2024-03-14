@@ -5,5 +5,6 @@ if __name__ == '__main__':
 # Assigning values to variables a and b
     a = 1
     b = 2
+    result = add(a, b)
 # Printing the result of the addition
-    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} + {} = {} ".format(a, b, result))
