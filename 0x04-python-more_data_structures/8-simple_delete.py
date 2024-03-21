@@ -10,6 +10,9 @@ def simple_delete(a_dictionary, key=""):
     Returns:
     None. The function modifies the dictionary in place.
     """
-    if key in a_dictionary:
-        del a_dictionary[key]
+    if a_dictionary is None:
+        return
+    else:
+        if key in a_dictionary:
+            del a_dictionary[key]
         return a_dictionary
