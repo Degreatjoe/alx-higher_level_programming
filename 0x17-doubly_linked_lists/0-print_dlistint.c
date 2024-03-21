@@ -1,15 +1,21 @@
-#include <stdio.h>
-#include "lists.h" // Include the header file where dlistint_t is defined
+#include "lists.h"
 
-size_t print_dlistint(const dlistint_t *h) {
-    size_t count = 0; // Initialize a counter for the number of nodes
+/**
+ * print_dlistint - Prints all elements of a dlistint_t list
+ * @h: Pointer to the head of the list
+ *
+ * Return: Number of nodes in the list
+ */
+size_t print_dlistint(const dlistint_t *h)
+{
+	size_t count = 0;
 
-    // Iterate through the list
-    while (h != NULL) {
-        printf("%d\n", h->n); // Print the value of the current node
-        h = h->next; // Move to the next node
-        count++; // Increment the counter
-    }
+	while (h != NULL)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+		count++;
+	}
 
-    return count; // Return the number of nodes
+	return (count);
 }
