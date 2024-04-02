@@ -4,8 +4,5 @@
 
 
 class square:
-    '''
-    A class used to calculate the square of a given
-    number
-    '''
+    '''A class used to calculate the square of a given number'''
     pass
