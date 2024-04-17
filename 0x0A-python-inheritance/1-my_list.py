@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''Defining my list'''
+
+
 class MyList(list):
     '''MyList inherits from list '''
     ERR_MSG = "'<' not supported between instances of 'str' and 'int'"
