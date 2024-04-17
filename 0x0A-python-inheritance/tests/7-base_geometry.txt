@@ -1,0 +1,53 @@
+=============================
+Testing BaseGeometry Class
+=============================
+
+This module tests the functionality of the BaseGeometry class.
+
+Usage
+=====
+
+Import the BaseGeometry class:
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Create an instance of the BaseGeometry class:
+
+::
+
+    >>> bg = BaseGeometry()
+
+Attempt to call the area method without implementing it:
+
+::
+
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+Use the integer_validator method to validate an integer value:
+
+::
+
+    >>> bg.integer_validator("width", 10)
+
+Attempt to validate a non-integer value:
+
+::
+
+    >>> bg.integer_validator("height", "hello")
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+
+Attempt to validate an integer less than or equal to 0:
+
+::
+
+    >>> bg.integer_validator("height", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: height must be greater than 0
