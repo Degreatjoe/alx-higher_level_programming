@@ -8,7 +8,7 @@ def read_file(filename=""):
         filename: the name of the file
         '''
     try:
-        with open(filename, "a+", encoding="utf-8") as file:
+        with open(filename, "w+", encoding="utf-8") as file:
             file.seek(0)  # Move the cursor to the beginning of the file
             content = file.read()  # Read the content
             print(content)
