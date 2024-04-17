@@ -7,10 +7,6 @@ def read_file(filename=""):
     args:
         filename: the name of the file
         '''
-    try:
-        with open(filename, "w+", encoding="utf-8") as file:
-            file.seek(0)  # Move the cursor to the beginning of the file
-            content = file.read()  # Read the content
-            print(content)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    with open(filename, "r+", encoding="utf-8") as file:
+        content = file.read()  # Read the content
+        print(content)
