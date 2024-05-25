@@ -1,1 +1,1 @@
-# ALX Myseequeel
+# Solutions to SQL - Introduction
