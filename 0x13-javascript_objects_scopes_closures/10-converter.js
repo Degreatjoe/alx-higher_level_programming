@@ -1,14 +1,15 @@
 #!/usr/bin/node
 
 exports.converter = function (base) {
-  function convert (num) {
+  return function convert (num) {
     if (num >= base) {
       convert(Math.floor(num / base));
     }
-    process.stdout.write(num.toString());
-    if (num !== 10) {
-      process.stdout.write('\n');
+    const remainder = num % base;
+    if (remainder >= 10) {
+      process.stdout.write(String.fromCharCode(remainder + 87));
+    } else {
+      process.stdout.write(remainder.toString());
     }
-  }
-  return convert;
+  };
 };
