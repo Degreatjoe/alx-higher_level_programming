@@ -5,7 +5,7 @@ exports.converter = function (base) {
     if (num >= base) {
       convert(Math.floor(num / base));
     }
-    process.stdout.write(num % base.toString(10));
+    process.stdout.write((num % base).toString());
   }
   return convert;
 };
