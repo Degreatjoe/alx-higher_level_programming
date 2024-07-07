@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import urllib.request, sys
+import urllib.request
+import sys
 """takes in url and display the x-request-id of the
 url"""
 
