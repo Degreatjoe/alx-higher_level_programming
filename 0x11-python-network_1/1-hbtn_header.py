@@ -11,6 +11,6 @@ if sys.argv == 2:
     url = sys.argv[1]
 
     with urllib.request.urlopen(url) as response:
-        header = response.info()
+        header = response.headers()
 
     print(header.get('X-Request-Id'))
