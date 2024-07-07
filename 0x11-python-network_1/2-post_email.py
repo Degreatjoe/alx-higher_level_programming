@@ -19,4 +19,4 @@ if sys.argv == 3:
     with urllib.request.urlopen(url, data) as response:
         body = response.read().decode('utf-8')
 
-    print(body)
+    print(f"Your email is: {email}")
