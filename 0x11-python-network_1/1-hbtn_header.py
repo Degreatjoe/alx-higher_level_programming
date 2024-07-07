@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import urllib.request
-import sys
 """takes in url and display the x-request-id of the
 url"""
+import urllib.request
+import sys
 
 
 args = sys.argv[1]
