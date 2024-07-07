@@ -16,7 +16,9 @@ if sys.argv == 3:
 
     data = urllib.parse.urlencode({'email': email}).encode('utf-8')
 
-    with urllib.request.urlopen(url, data) as response:
+    req = urllib.request.Request(url, data=data, method='POST')
+
+    with urllib.request.urlopen(req) as response:
         body = response.read()
         dec = body.decode('utf-8')
 
