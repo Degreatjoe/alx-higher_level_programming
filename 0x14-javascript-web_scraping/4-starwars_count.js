@@ -4,7 +4,7 @@ const request = require('request');
 const apiUrl = process.argv[2];
 const characterId = 18;
 
-function countFilmsWithCharacter(url, callback) {
+function countFilmsWithCharacter (url, callback) {
   request(url, (error, response, body) => {
     if (error) {
       console.log(error);
