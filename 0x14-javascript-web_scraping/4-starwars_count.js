@@ -7,8 +7,7 @@ const characterId = 18;
 function countFilmsWithCharacter (url, callback) {
   request(url, (error, response, body) => {
     if (error) {
-      console.log(error);
-      return;
+      return callback(error, null);
     }
 
     const data = JSON.parse(body);
@@ -22,15 +21,22 @@ function countFilmsWithCharacter (url, callback) {
 
     // If there is a next page, recurse to handle pagination
     if (data.next) {
-      countFilmsWithCharacter(data.next, (nextCount) => {
-        callback(count + nextCount);
+      countFilmsWithCharacter(data.next, (nextError, nextCount) => {
+        if (nextError) {
+          return callback(nextError, null);
+        }
+        callback(null, count + nextCount);
       });
     } else {
-      callback(count);
+      callback(null, count);
     }
   });
 }
 
-countFilmsWithCharacter(apiUrl, (totalCount) => {
-  console.log(totalCount);
+countFilmsWithCharacter(apiUrl, (error, totalCount) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(totalCount);
+  }
 });
